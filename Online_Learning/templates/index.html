@@ -1,0 +1,199 @@
+{% load static %}
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="keywords" content="">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap and Font Awesome css -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- owl carousel css -->
+
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+
+    <!-- Theme stylesheet -->
+    <link href="{% static 'css/style.default.css' %}" rel="stylesheet" id="theme-stylesheet">
+
+    <!-- Custom stylesheet - for your changes -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+    <!-- CSS Animations -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+
+    <!-- Mordernizr -->
+    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+
+    <!-- Responsivity for older IE -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+    <meta property="og:title" content="Landing Page | Landing Page Bootstrap Theme by Bootstrapious.com!">
+    <meta property="og:site_name" content="Landing Page | Landing Page Bootstrap Theme by Bootstrapious.com!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+
+    <meta property="og:image" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@bootstrapious">
+
+</head>
+
+<body data-spy="scroll" data-target="#navigation" data-offset="120">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand scrollTo" href="#intro">软件工程在线学习平台</a>
+        </div>
+
+         <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#intro">首页</a>
+                </li>
+                <li><a href="#section1">图谱</a>
+                </li>
+                <li><a href="#section2">搜索</a>
+                </li>
+                <li><a href="#section3">关于我们</a>
+                </li>
+                <li><a href="{% url 'login' %}">登录</a>
+                </li>
+                <li><a href="{% url 'register' %}" style="!important">注册</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="fr"
+             style="width: 150px;
+             float: right;
+             text-align: center;
+             letter-spacing: 0.1em;
+             font-size: 12px;
+             font-weight: bold;">
+                {% if user.is_authenticated %}
+                <div class="login_btn fl">
+                    欢迎您：<em style="color: blue;">{{ user.username }}</em>
+                </div>
+                {% endif %}
+            </div>
+    </div>
+</div>
+
+<div id="all">
+    <div id="intro" class="clearfix">
+    </div>
+
+    <div class="section" id="section1">
+        <div class="container">
+            <div class="col-md-12">
+                <h2 class="title" data-animate="fadeInDown">为什么是图谱？</h2>
+                <p class="lead">Knowledge Graph</p>
+                <div class="row services">
+                    <div class="col-md-4" data-animate="fadeInUp">
+                        <div><img src="{% static 'img/graph.png' %}"></div>
+                        <h3 class="heading">知识图谱</h3>
+                        <p>知识图谱是结构化的语义知识库，用于以符号形式描述物理世界中的概念及相互关系</p>
+                    </div>
+                    <div class="col-md-4" data-animate="fadeInUp">
+                        <div><img src="{% static 'img/knowledge.png' %}"></div>
+                        <h3 class="heading">架构</h3>
+                        <p>基本单位是“实体-关系-实体”三元组，迭代过程包括信息抽取、知识融合及知识加工</p>
+                    </div>
+                    <div class="col-md-4" data-animate="fadeInUp">
+                        <div><img src="{% static 'img/product.png' %}"></div>
+                        <h3 class="heading">相关产品</h3>
+                        <p>例如：YAGO、Google search Engine、DBpedia</p>
+                    </div>
+                </div>
+                <a href="{% url 'graph' %}" style="font-size: 20px;">浏览图谱</a>
+            </div>
+        </div>
+    </div>
+    <div class="section  text-gray" id="section2">
+        <div class="container">
+            <div class="col-md-12">
+                <h2 class="title" data-animate="fadeInDown">搜索最需要的</h2>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p class="text-large text-thin" data-animate="fadeInUp">百种课程任你选择，更多详细课程信息为您准备</p>
+                        <p class="text-large text-thin" data-animate="fadeInUp">
+                            有关软件工程专业的百余门课程任你搜索，更多与搜索课程相关的课程信息为您提供</p>
+                        <a href="{% url 'search' %}" style="font-size: 20px;">开始搜索</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section text-gray" id="section3" data-animate="fadeInUp">
+        <div class="container">
+            <div class="col-md-12">
+
+                <div class="mb20">
+                    <h2 class="title" data-animate="fadeInUp">新工科智慧云</h2>
+                    <p class="lead text-center" data-animate="fadeInUp">云享教育 智引未来</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="footer">
+        <div class="container">
+            <div style="text-align: left">
+                <img src="{% static 'img/people.png' %}">
+                <span style="color:white;">关于我们：新工科智慧云</span>
+            </div>
+            <div style="text-align: left">
+                <img src="{% static 'img/tele.png' %}">
+                <span style="color:white;">联系方式：xxxxxxxxxx</span>
+            </div>
+            <div style="text-align: left">
+                <img src="{% static 'img/location.png' %}">
+                <span style="color:white;">地址：xxxxxxxxxx</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- js base -->
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!-- waypoints for scroll spy -->
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+
+<!-- owl carousel -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+<!-- jQuery scroll to -->
+<script src="{% static 'js/jquery.scrollTo.min.js' %}"></script>
+
+<!-- main js file -->
+<script src="{% static 'js/front.js' %}"></script>
+
+</body>
+</html>
